@@ -58,7 +58,7 @@ export function NewTodoForm({ onSubmit }) {
           validate="true"
         />
       </div>
-      <button className="btn">Create Todo Item</button>
+      <button className="btn blue darken-3">Create Todo Item</button>
     </form>
   );
 }

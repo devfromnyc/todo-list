@@ -50,15 +50,15 @@ p.todo-header-paragraph {
   max-width: 500px;
 }
 
-.btn:hover,
-.btn:focus-visible {
-  background: hsl(200, 100%, 50%, 0.2);
+.btn.blue.darken-3:hover,
+.btn.blue.darken-3:focus-visible {
+  background: #0d47a1 !important;
 }
 
 .btn.btn-danger {
-  background: hsl(0, 100%, 40%, 0.1);
-  border: 1px solid hsl(0, 100%, 40%);
-  color: hsl(0, 100%, 40%);
+  background: #c62828;
+  border: 1px solid #c62828;
+  color: white;
 }
 
 .btn.btn-danger:hover,
