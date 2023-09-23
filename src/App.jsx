@@ -26,7 +26,12 @@ export default function App() {
     });
   }
 
-  function toggleTodo(id, completed) {
+  function toggleTodo(id, completed, key) {
+    if (key === "Enter" && completed == false) {
+      completed = true;
+    } else if (key === "Enter" && completed == true) {
+      completed = false;
+    }
     setTodos((currentTodos) => {
       return currentTodos.map((todo) => {
         if (todo.id === id) {

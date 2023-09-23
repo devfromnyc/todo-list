@@ -14,6 +14,7 @@ export function TodoItem({
           type="checkbox"
           checked={completed}
           onChange={(e) => toggleTodo(id, e.target.checked)}
+          onKeyUp={(e) => toggleTodo(id, e.target.checked, e.key)}
         />
         <p className="title">
           {title} {completed && "complete!"}
