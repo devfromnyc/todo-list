@@ -46,9 +46,17 @@ export default function App() {
   return (
     <React.Fragment>
       <main>
-        <h1>Steve Madden Todos</h1>
+        <h1>React To-do List App!</h1>
+        <p className="todo-header-paragraph">
+          Hello! And welcome to my To-do List Web Application powered by React
+          and Vite! In this app, you'll notice three different input type
+          fields. The first input field designates the title of the task you
+          want to add followed by a general input option to add any supporting
+          information for your todo and last but not least, a link to an
+          external document if necessary.
+        </p>
         <NewTodoForm onSubmit={addTodo} />
-        <h2 className="header">Todo List</h2>
+        <h2 className="header">List of To-dos</h2>
         <TodoList
           todos={todos}
           toggleTodo={toggleTodo}

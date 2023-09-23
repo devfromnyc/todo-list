@@ -46,6 +46,9 @@ p.title {
 p {
   margin-top: 0.4rem;
 }
+p.todo-header-paragraph {
+  max-width: 500px;
+}
 
 .btn:hover,
 .btn:focus-visible {
