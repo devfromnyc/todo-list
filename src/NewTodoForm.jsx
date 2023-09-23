@@ -1,29 +1,64 @@
 import React, { useState } from "react";
 
 export function NewTodoForm({ onSubmit }) {
-  const [newItem, setNewItem] = useState("");
+  const [newTitle, setNewTitle] = useState("");
+  const [newInfo, setNewInfo] = useState("");
+  const [newLink, setNewLink] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (newItem === "") return;
+    if (newTitle === "" || newInfo === "") return;
 
-    onSubmit(newItem);
+    const newItemObj = {
+      title: newTitle,
+      info: newInfo,
+      link: newLink,
+    };
 
-    setNewItem("");
+    onSubmit(newItemObj);
+
+    setNewTitle("");
+    setNewInfo("");
+    setNewLink("");
   }
 
   return (
     <form onSubmit={handleSubmit} className="new-item-form">
       <div className="form-row">
-        <label htmlFor="item">New Item</label>
+        <label htmlFor="item" className="todo-header">
+          New Todo
+        </label>
         <input
-          value={newItem}
-          onChange={(e) => setNewItem(e.target.value)}
+          value={newTitle}
+          onChange={(e) => setNewTitle(e.target.value)}
           type="text"
           id="item"
+          required
+          validate="true"
+        />
+        <label htmlFor="info" className="todo-header">
+          Todo Info
+        </label>
+        <input
+          value={newInfo}
+          onChange={(e) => setNewInfo(e.target.value)}
+          type="text"
+          id="info"
+          required
+          validate="true"
+        />
+        <label htmlFor="link" className="todo-header">
+          Link (if applicable)
+        </label>
+        <input
+          value={newLink}
+          onChange={(e) => setNewLink(e.target.value)}
+          type="url"
+          id="link"
+          validate="true"
         />
       </div>
-      <button className="btn">Add</button>
+      <button className="btn">Create Todo Item</button>
     </form>
   );
 }

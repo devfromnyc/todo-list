@@ -6,14 +6,25 @@
 body {
   background: #333;
   color: hsl(200, 100%, 90%);
-  max-width: 500px;
+  max-width: 1200px;
   padding: 1rem;
   margin: 0 auto;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .new-item-form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
   gap: 0.5rem;
 }
 
@@ -25,6 +36,15 @@ body {
 
 label {
   font-size: 1rem;
+}
+
+p.title {
+  font-size: 1.8rem;
+  margin: 0px 0px 0px 1rem;
+}
+
+p {
+  margin-top: 0.4rem;
 }
 
 .btn:hover,
@@ -41,6 +61,10 @@ label {
 .btn.btn-danger:hover,
 .btn.btn-danger:focus-visible {
   background: hsl(0, 100%, 40%, 0.2);
+}
+
+.todo-header {
+  font-size: 1.5rem;
 }
 
 .new-item-form input {
@@ -78,7 +102,9 @@ label {
 .list li {
   display: flex;
   gap: 0.5rem;
-  align-items: center;
+  margin-top: 0.5rem;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .list li label {

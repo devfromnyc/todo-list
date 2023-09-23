@@ -14,11 +14,14 @@ export default function App() {
     localStorage.setItem("ITEMS", JSON.stringify(todos));
   }, [todos]);
 
-  function addTodo(title) {
+  function addTodo(todoObj) {
+    const title = todoObj.title;
+    const info = todoObj.info;
+    const link = todoObj.link;
     setTodos((currentTodos) => {
       return [
         ...currentTodos,
-        { id: crypto.randomUUID(), title, completed: false },
+        { id: crypto.randomUUID(), title, info, link, completed: false },
       ];
     });
   }
@@ -42,9 +45,16 @@ export default function App() {
 
   return (
     <React.Fragment>
-      <NewTodoForm onSubmit={addTodo} />
-      <h1 className="header">Todo List</h1>
-      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <main>
+        <h1>Steve Madden Todos</h1>
+        <NewTodoForm onSubmit={addTodo} />
+        <h2 className="header">Todo List</h2>
+        <TodoList
+          todos={todos}
+          toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
+        />
+      </main>
     </React.Fragment>
   );
 }
